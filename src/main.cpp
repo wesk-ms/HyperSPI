@@ -333,7 +333,7 @@ void setup()
 
 		#if defined(CONFIG_IDF_TARGET_ESP32S2)
 			// sck: 7, miso: 34 (no important), MOSI: 11, spi select: 12
-			slave.begin(VSPI, 36, 37, 35, 1);
+			slave.begin(VSPI, 7, 34, 11, 12);
 		#else
 			slave.begin(VSPI);
 		#endif
@@ -377,4 +377,3 @@ void loop()
 	if (Serial && deltaTime > 3000)
 		statistics.print(currentTime, base.processDataHandle, base.processSerialHandle);
 }
-
